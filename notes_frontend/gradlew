@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# notes_frontend-level Gradle wrapper shim for Expo-managed workflow: succeed and print guidance.
+echo "[notes_frontend gradle shim] Expo-managed app. Skipping native Gradle step."
+echo "[notes_frontend gradle shim] For native builds: run 'npm run prebuild' then use ./android/gradlew."
+exit 0

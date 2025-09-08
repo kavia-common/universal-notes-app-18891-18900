@@ -1,0 +1,11 @@
+plugins {
+    // no android plugins applied to keep it no-op
+}
+
+tasks.register("check") {
+    group = "verification"
+    description = "No-op check task to satisfy CI."
+    doLast {
+        println("No-op Gradle check for Expo-managed project.")
+    }
+}

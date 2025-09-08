@@ -4,25 +4,33 @@
   "main": "index.ts",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "lint": "eslint .",
-    "prebuild:android": "expo prebuild --platform android",
-    "build": "npm run prebuild:android && cd android && ./gradlew assembleDebug"
+    "build:web": "expo export --platform web",
+    "prebuild": "expo prebuild",
+    "clean-native": "rm -rf android ios",
+    "ci:gradle-check": "bash ./scripts/ci-gradle-check.sh"
   },
   "dependencies": {
     "@expo/metro-runtime": "~5.0.4",
+    "@react-navigation/native": "^7.0.14",
+    "@react-navigation/native-stack": "^7.1.9",
     "expo": "~53.0.20",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.5",
-    "react-native-web": "^0.20.0"
+    "react-native-safe-area-context": "4.12.0",
+    "react-native-screens": "~4.4.0",
+    "react-native-web": "^0.20.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@types/react": "~19.0.10",
+    "@types/uuid": "^9.0.8",
     "eslint": "^9.33.0",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.3.0",
